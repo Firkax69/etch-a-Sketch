@@ -8,7 +8,7 @@ container.style.width = `${GRIDSIDE}px`;
 container.style.height = `${GRIDSIDE}px`
 
 
-function createGridCells() {
+function createGridCells(rows, columns) {
     for (let i=0; i < (rows*columns); i++) {
         const gridCell = document.createElement("div");
         
@@ -34,5 +34,8 @@ function changeColor() {
 }
 
 
+
 createGridCells();
 changeColor();
+
+

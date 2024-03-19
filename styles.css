@@ -9,11 +9,42 @@ body {
 
 #main {
     background-color: white;
-    margin: 100px auto;
+    margin: 50px auto;
     display: flex;
     flex-wrap: wrap;
+    box-shadow: 10px 10px rgba(0,170,255,0.034);
 }
 
 .cell {
     border: 1px solid rgb(209, 220, 230);
+}
+
+.header {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    /* set up better font */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+    background-color: rgb(212, 231, 248);
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    font-size: 30px;
+    padding-top: 25px;
+}
+
+.button {
+    font-size: 30px;
+    border-radius: 15px;
+    background-color: aliceblue;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    box-shadow: 8px 8px 8px rgba(0,0,0,0.2), -8px 8px 8px rgba(0,0,0,0.2) ;
 }
