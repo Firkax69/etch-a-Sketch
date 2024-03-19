@@ -20,4 +20,19 @@ function createGridCells() {
     }
 }
 
+function changeColor() {
+    const grids = document.querySelectorAll(".cell");
+
+    grids.forEach((grid) => {
+        grid.addEventListener("mouseover", () => {
+            const rgb = "rgb(" + Math.floor(Math.random() * 255)
+            + "," + Math.floor(Math.random() * 255) + ","
+            + Math.floor(Math.random() * 255) + ")";
+            grid.style.background = rgb;
+        });
+    });
+}
+
+
 createGridCells();
+changeColor();
