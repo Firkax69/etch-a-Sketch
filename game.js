@@ -1,19 +1,18 @@
 const container = document.querySelector("#main");
 
 const GRIDSIDE = 600;
-let rows = 16;
-let columns = 16;
+let side = 16;
 
-container.style.width = `${GRIDSIDE}px`;
-container.style.height = `${GRIDSIDE}px`
+container.style.width = container.style.height = `${GRIDSIDE}px`;
 
+createGridCells(16);
+changeColor();
 
-function createGridCells(rows, columns) {
-    for (let i=0; i < (rows*columns); i++) {
+function createGridCells(side) {
+    for (let i=0; i < (side*side); i++) {
         const gridCell = document.createElement("div");
         
-        gridCell.style.width = `${(GRIDSIDE / columns) - 2}px`;
-        gridCell.style.height = `${(GRIDSIDE / rows) - 2}px`;
+        gridCell.style.width = gridCell.style.height = `${(GRIDSIDE / side) - 2}px`;
         gridCell.classList.add("cell");
 
         container.appendChild(gridCell);
@@ -33,9 +32,19 @@ function changeColor() {
     });
 }
 
+const startAgainButton = document.querySelector(".button");
+startAgainButton.addEventListener("click", () => {
+    let gridSize = prompt("Please enter size of grid side.\nPlease input number from 1-100");
+    if (gridSize < 1 || gridSize >100) {
+        alert("A larger number of squares might result  delays, freezing, or crashing.\nPlease input number 1-100")
+    } else {
+        container.innerHTML = "";
+        createGridCells(gridSize);
+        changeColor();
+    }
+})
 
 
-createGridCells();
-changeColor();
+
 
 
